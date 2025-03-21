@@ -1,0 +1,191 @@
+{
+    "CodeReadParser": {
+        "attributes": {
+            "project_path": "Any"
+        },
+        "methods": [
+            {
+                "name": "__call__",
+                "args": [],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_file_path_to_relative_path",
+                "args": [
+                    "file_path: str"
+                ],
+                "decorators": [],
+                "return_type": "str"
+            },
+            {
+                "name": "_get_py_files",
+                "args": [],
+                "decorators": [],
+                "return_type": "List[str]"
+            },
+            {
+                "name": "_get_encoding",
+                "args": [
+                    "file_path: str"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_parse_all_files",
+                "args": [
+                    "py_files: Any"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_register_classes",
+                "args": [
+                    "file_path: str",
+                    "tree: ast.Module"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_extract_class_details",
+                "args": [
+                    "class_name: str",
+                    "class_node: ast.ClassDef"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_process_method",
+                "args": [
+                    "class_name: str",
+                    "method_node: ast.FunctionDef"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_extract_arguments",
+                "args": [
+                    "arguments: ast.arguments"
+                ],
+                "decorators": [],
+                "return_type": "List[str]"
+            },
+            {
+                "name": "_extract_return_type",
+                "args": [
+                    "method_node: ast.FunctionDef"
+                ],
+                "decorators": [],
+                "return_type": "str"
+            },
+            {
+                "name": "_process_init_method",
+                "args": [
+                    "class_name: str",
+                    "init_node: ast.FunctionDef"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_process_class_attribute",
+                "args": [
+                    "class_name: str",
+                    "assign_node: ast.Assign"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_process_annotated_attribute",
+                "args": [
+                    "class_name: str",
+                    "ann_assign_node: ast.AnnAssign"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "print_classes_info",
+                "args": [],
+                "decorators": [],
+                "return_type": "None"
+            }
+        ],
+        "parent_classes": []
+    },
+    "JSONSaver": {
+        "attributes": {
+            "classes_info": "Any",
+            "json_path": "Any",
+            "VALID_ENCODING": "Any"
+        },
+        "methods": [
+            {
+                "name": "_validate_classes_info",
+                "args": [],
+                "decorators": [],
+                "return_type": "bool"
+            },
+            {
+                "name": "save_to_json",
+                "args": [],
+                "decorators": [],
+                "return_type": "None"
+            }
+        ],
+        "parent_classes": []
+    },
+    "UMLCreator": {
+        "attributes": {
+            "VALID_ENCODING": "Any",
+            "uml_path": "Any",
+            "class_template": "Any"
+        },
+        "methods": [
+            {
+                "name": "load_from_json",
+                "args": [
+                    "json_path: str"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "_validate_classes_info",
+                "args": [],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "generate_dot",
+                "args": [],
+                "decorators": [],
+                "return_type": "str"
+            },
+            {
+                "name": "render_dot",
+                "args": [
+                    "dot_code: str",
+                    "output_file: str"
+                ],
+                "decorators": [],
+                "return_type": "None"
+            },
+            {
+                "name": "create_uml",
+                "args": [],
+                "decorators": [],
+                "return_type": "None"
+            }
+        ],
+        "parent_classes": [
+            "JSONSaver"
+        ]
+    }
+}
