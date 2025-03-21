@@ -1,0 +1,61 @@
+digraph G {
+
+        CodeReadParser [
+            shape=plaintext
+            label=<
+                <table border="0" cellborder="1" cellspacing="0">
+                    <tr><td><b>CodeReadParser</b></td></tr>
+                    <tr><td align="left">- project_path: Any</td></tr>
+                    <tr><td align="left">+ __call__(): None</td></tr>
+<tr><td align="left">+ _file_path_to_relative_path(): str</td></tr>
+<tr><td align="left">+ _get_py_files(): List[str]</td></tr>
+<tr><td align="left">+ _get_encoding(): None</td></tr>
+<tr><td align="left">+ _parse_all_files(): None</td></tr>
+<tr><td align="left">+ _register_classes(): None</td></tr>
+<tr><td align="left">+ _extract_class_details(): None</td></tr>
+<tr><td align="left">+ _process_method(): None</td></tr>
+<tr><td align="left">+ _extract_arguments(): List[str]</td></tr>
+<tr><td align="left">+ _extract_return_type(): str</td></tr>
+<tr><td align="left">+ _process_init_method(): None</td></tr>
+<tr><td align="left">+ _process_class_attribute(): None</td></tr>
+<tr><td align="left">+ _process_annotated_attribute(): None</td></tr>
+<tr><td align="left">+ print_classes_info(): None</td></tr>
+                </table>
+            >
+        ];
+        
+
+        JSONSaver [
+            shape=plaintext
+            label=<
+                <table border="0" cellborder="1" cellspacing="0">
+                    <tr><td><b>JSONSaver</b></td></tr>
+                    <tr><td align="left">- classes_info: Any</td></tr>
+<tr><td align="left">- json_path: Any</td></tr>
+<tr><td align="left">- VALID_ENCODING: Any</td></tr>
+                    <tr><td align="left">+ _validate_classes_info(): bool</td></tr>
+<tr><td align="left">+ save_to_json(): None</td></tr>
+                </table>
+            >
+        ];
+        
+
+        UMLCreator [
+            shape=plaintext
+            label=<
+                <table border="0" cellborder="1" cellspacing="0">
+                    <tr><td><b>UMLCreator</b></td></tr>
+                    <tr><td align="left">- VALID_ENCODING: Any</td></tr>
+<tr><td align="left">- uml_path: Any</td></tr>
+<tr><td align="left">- class_template: Any</td></tr>
+                    <tr><td align="left">+ load_from_json(): None</td></tr>
+<tr><td align="left">+ _validate_classes_info(): None</td></tr>
+<tr><td align="left">+ generate_dot(): str</td></tr>
+<tr><td align="left">+ render_dot(): None</td></tr>
+<tr><td align="left">+ create_uml(): None</td></tr>
+                </table>
+            >
+        ];
+        
+JSONSaver -> UMLCreator [arrowhead=onormal];
+}
